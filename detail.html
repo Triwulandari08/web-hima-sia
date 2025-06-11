@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tentang HIMA SIA - UTDI</title>
   <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest.json" />
 </head>
 
 <!-- Kode ini bagian awal dari halaman web untuk mengatur tampilan dengan rwd agar bisa dibuka dengan baik di semua perangkat. 
@@ -111,6 +112,17 @@
     document.getElementById('menu-toggle').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            console.log('ServiceWorker terdaftar: ', registration.scope);
+          }, function (error) {
+            console.log('Pendaftaran ServiceWorker gagal: ', error);
+          });
+      });
+    }
   </script>
 
   <!-- Kode JavaScript tersebut membuat tombol hamburger bisa membuka atau
