@@ -1,4 +1,6 @@
+// Nama cache yang digunakan, bisa diganti saat ada update konten
 const CACHE_NAME = 'hima-cache-v1';
+// Daftar file yang akan disimpan di cache saat service worker diinstal
 const URLS_TO_CACHE = [
   'index.html',
   'detail.html',
@@ -12,16 +14,18 @@ const URLS_TO_CACHE = [
   'img/dpo.jpeg'
 ];
 
-// Proses install service worker & cache file
+// // Event 'install' akan dijalankan saat service worker pertama kali terpasang
 self.addEventListener('install', event => {
-  console.log('[ServiceWorker] Installing...');
+  console.log('[ServiceWorker] Installing...'); 
+  // Tunggu hingga semua file di-cache sebelum menyelesaikan proses install
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(CACHE_NAME) // Membuka cache dengan nama yang sudah ditentukan
       .then(cache => {
         console.log('[ServiceWorker] Caching app shell...');
-        return cache.addAll(URLS_TO_CACHE);
+        // Tambahkan semua file ke cache file yang ada diatas tadi 
+        return cache.addAll(URLS_TO_CACHE); 
       })
-      .catch(error => {
+      .catch(error => { // Tangani error jika gagal menyimpan cache
         console.error('[ServiceWorker] Failed to cache:', error);
       })
   );
