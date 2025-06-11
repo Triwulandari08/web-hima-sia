@@ -34,7 +34,7 @@ self.addEventListener('fetch', event => {
       return response || fetch(event.request);
     }).catch(() => {
       // Optional: tampilkan fallback page kalau offline dan file tidak ditemukan
-      return caches.match('/index.html');
+      return caches.match('index.html');
     })
   );
 });
