@@ -3,119 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HIMA SIA - UTDI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="manifest" href="manifest.json" />
+  <title>Beranda HIMA SIA - UTDI</title>
+  <style>
+    body {
+      background-image: url('img/backweb.jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .bg-overlay {
+      background-color: rgba(255, 255, 255, 0.8); /* lebih transparan */
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: #2b6cb0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      gap: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .header img {
+      height: 60px;
+      width: auto;
+    }
+
+    .header h1 {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .back-button {
+      background-color: #2b6cb0;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #245a9c;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #2b6cb0;
+    }
+
+    footer {
+      background-color: #2b6cb0;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header img {
+        height: 50px;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
-<!-- Tag meta viewport digunakan agar layout dapat menyesuaikan ukuran layar perangkat(responsif)
- pada web ini menggunakan Tailwind CSS untuk mempermudah pengaturan layout RWD -->
-
-<body class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('img/backweb.jpeg');">
- <!-- Kode ini mengatur tampilan background yang berguna untuk menyisipkan gambar sebagai latar belakang -->
-
-  <!-- Overlay konten -->
-  <div class="bg-black bg-opacity-60 flex flex-col flex-grow text-white">
-  <!-- Kode program tersebut mengatur transparansi background agar konten tuliasn dapat terlihat lebih jelas -->
-
+<body>
+  <div class="bg-overlay">
     <!-- Header -->
-    <header class="bg-blue-800 text-white p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold">HIMA SIA - UTDI</h1>
-
-        <!-- Hamburger -->
-        <button id="menu-button" class="md:hidden block focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-               viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <!-- Kode tersebut membuat tombol hamburger menu (ikon tiga garis horizontal) yang biasanya digunakan pada 
-         tampilan mobile untuk membuka menu navigasi.-->
-
-        <!-- Menu -->
-        <nav id="menu" class="hidden md:flex space-x-4">
-          <a href="index.html" class="hover:underline">BERANDA</a>
-          <a href="detail.html" class="hover:underline">STRUKTUR ORGANISASI</a>
-        </nav>
-      </div>
-
-      <!-- Menu Mobile -->
-      <div id="mobile-menu" class="md:hidden hidden mt-2 px-4">
-        <a href="index.html" class="block py-1 hover:underline">BERANDA</a>
-        <a href="detail.html" class="block py-1 hover:underline">STRUKTUR ORGANISASI</a>
-      </div>
+    <header class="header">
+      <img src="img/logo_hima_sia.png" alt="Logo HIMA" />
+      <h1>HIMA SIA - UTDI</h1>
     </header>
-    <!-- Kode tersebut membuat tombol beranda dan tentang kami menjadi tersembunyi dan ditampilkan dalam tombol hamburger.-->
 
-    <!-- Hero -->
-    <section class="p-8 text-center">
-      <img src="img/logo_hima_sia.png" alt="Logo HIMA" class="mx-auto w-40 md:w-52" />
-      <h2 class="text-3xl font-semibold mt-4">Selamat Datang</h2>
-      <h2 class="text-7xl font-bold mt-2">Himpunan Mahasiswa Sistem Informasi Akuntansi</h2>
-      <h3 class="text-4x1 font-semibold mt-2 text-gray-300">Universitas Teknologi Digital Indonesia</p>
-    </section>
-      <!-- Kode program diatas merupakan tampilan halaman depan dari web hima sia yang memuat headline bahwa web tersebut adalah web himasia. -->
+    <!-- Navigasi -->
+    <nav class="container nav-buttons">
+      <a href="index.html" class="back-button">BERANDA</a>
+      <a href="detail.html" class="back-button">STRUKTUR ORGANISASI</a>
+    </nav>
 
-    <!-- Konten -->
-    <section class="p-8 grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow">
-      <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-        <h3 class="text-lg font-bold">TENTANG KAMI</h3>
-        <p class="text-justify">Himpunan Mahasiswa Sistem Informasi Akuntansi adalah organisasi yang bertujuan untuk menghimpun dan menjadi wadah aspirasi mahasiswa Sistem Informasi Akuntansi UNIVERSITAS TEKNOLOGI DIGITAL INDONESIA serta mempererat tali persaudaraan antara mahasiswa Sistem Informasi Akuntansi.
-            Selain itu HIMA SIA adalah wadah untuk mengembangkan kemampuan dan potensi dalam bidang akademik maupun non akademik.
-        </p>
+    <!-- Konten Utama -->
+    <main class="container">
+      <div class="card">
+        <div class="card-content">
+          <h2>Tentang Kami</h2>
+          <p>Himpunan Mahasiswa Sistem Informasi Akuntansi (HIMA SIA) adalah organisasi kemahasiswaan di Universitas Teknologi Digital Indonesia yang menjadi wadah aspirasi, kreativitas, dan pengembangan diri mahasiswa Program Studi Sistem Informasi Akuntansi.</p>
+        </div>
       </div>
-      <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-        <h3 class="text-lg font-bold">ORIENTASI  KERJA UMUM  HIMA SIA</h3>
-        <p class="text-justify">Semua kegiatan diarahkan pada pengembangan wawasan dan sumber daya manusia, yang peka terhadap informasi serta pembentukan integritas personal yang konsisten dalam sikap nyata, sebagai wujud tanggung jawab intelektual mahasiswa secara luas untuk membangun totalitas peran mahasiswa.
 
-            Beberapa orientasi kerja umum tersebut adalah sebagai berikut:
-            1. Menjalin hubungan kekeluargaan yang erat antara anggota HIMA SIA untuk mencapai kebersamaan dan kekompakan antar keluarga HIMA SIA.
-            2. Meningkatkan kinerja dalam membangun HIMA SIA agar semakin tumbuh berkembang demi kemajuan bersama.
-            3. Mengembangkan ilmu pengetahuan dan teknologi.
-            4. Menjalin hubungan antar keluarga mahasiswa dalam maupun diluar lingkungan UTDI.
-            </p>
+      <div class="card">
+        <div class="card-content">
+          <h2>Orientasi Organisasi</h2>
+          <p>HIMA SIA berorientasi pada peningkatan kualitas akademik, soft skill, serta penguatan hubungan internal dan eksternal antar mahasiswa. Kegiatan kami mencakup pelatihan, seminar, pengabdian masyarakat, serta pembentukan relasi profesional yang mendukung karier mahasiswa di bidang teknologi informasi dan akuntansi.</p>
+        </div>
       </div>
-      <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-        <h3 class="text-lg font-bold">ORIENTASI KERJA KHUSUS</h3>
-        <p class="text-justify">Untuk dapat mencapai orientasi umum di atas maka diperlukan adanya bagian-bagian yang secara fungsional akan menjalankan perannya, sehingga pemahaman tentang status, peran dan tanggung jawab adalah syarat terjadinya pembagian fungsi yang harus benar-benar tegas dan jelas. Adapun aspek – aspek yang akan dijalankan tersebut adalah sebagai berikut:
-            1. Divisi Hubungan Masyarakat
-            2. Divisi Minat dan Bakat
-            3. Divisi Keanggotaan
-            </p>
-      </div>
-    </section>
-   <!-- Kode tersebut membuat tampilan konten isi web hima sia dalam bentuk card yang responsif, dengan tata letak grid untuk membuat bebrapa kolom-->
-
-
-    <!-- Footer -->
-    <footer class="bg-blue-800 text-white text-center p-4">
-      &copy; 2025 HIMA SIA - Universitas Teknologi Digital Indonesia
-    </footer>
-     <!-- Kode tersebut membuat footer sederhana dengan latar belakang biru tua, teks putih, dan posisi teks di tengah. -->
+    </main>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 HIMA SIA - Universitas Teknologi Digital Indonesia
+  </footer>
 
   <!-- Script hamburger -->
   <script>
     const menuBtn = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
+    menuBtn?.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+  </script>
 
-       if ('serviceWorker' in navigator) {
+  <!-- ✅ Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('service-worker.js')
           .then(function (registration) {
-            console.log('ServiceWorker terdaftar: ', registration.scope);
-          }, function (error) {
-            console.log('Pendaftaran ServiceWorker gagal: ', error);
+            console.log('ServiceWorker berhasil didaftarkan: ', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('ServiceWorker gagal didaftarkan: ', error);
           });
       });
     }
   </script>
-  <!-- Kode tersebut membuat fungsi tombol hamburger agar saat diklik,
-       elemen menu dengan ID mobile-menu akan muncul atau disembunyikan dengan menambahkan atau menghapus kelas hidden. -->
 </body>
 </html>
