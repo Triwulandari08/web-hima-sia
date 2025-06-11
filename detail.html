@@ -4,122 +4,204 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tentang HIMA SIA - UTDI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      background-image: url('img/backweb.jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .bg-overlay {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #2b6cb0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 10px;
+      gap: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .header img {
+      height: 60px;
+      width: auto;
+    }
+
+    .header h1 {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .back-button {
+      background-color: #2b6cb0;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #245a9c;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #2b6cb0;
+    }
+
+    footer {
+      background-color: #2b6cb0;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header img {
+        height: 50px;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
-<!-- Kode ini bagian awal dari halaman web untuk mengatur tampilan dengan rwd agar bisa dibuka dengan baik di semua perangkat. 
- Judul halamannya "Tentang HIMA SIA - UTDI", kode ini menghubungkan ke Tailwind CSS untuk mengatur desain dan tampilannya secara otomatis 
- sehingga tidak perlu menggunakan css manual. -->
-
-<body class="bg-cover bg-center min-h-screen flex flex-col" style="background-image: url('img/backweb.jpeg');">
-<!-- Kode ini mengatur tampilan background yang berguna untuk menyisipkan gambar sebagai latar belakang -->
-
-  <!-- Header -->
-  <div class="bg-black bg-opacity-60 text-white flex-1">
-    <header class="bg-blue-800 text-white p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold">HIMA SIA - UTDI</h1>
-        <nav class="hidden md:flex space-x-4">
-          <a href="index.html" class="hover:underline">BERANDA</a>
-          <a href="detail.html" class="hover:underline">STRUKTUR ORGANISASI</a>
-        </nav>
-    <!-- Kode tersebut membuat header sebuah website dengan latar biru gelap dan teks putih, menampilkan judul "HIMA SIA - UTDI"
-      serta menu navigasi berisi tautan ke halaman "Beranda" dan "Struktur Organisasi"  -->
-
-        <!-- Hamburger menu untuk tampilan mobile/hp -->
-        <div class="md:hidden">
-          <button id="menu-toggle" class="focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <!-- Kode tersebut menampilkan tombol hamburger (ikon tiga garis) yang hanya muncul di perangkat mobile (md:hidden). 
-       Tombol ini berfungsi untuk membuka atau menutup menu navigasi saat diklik, dan menggunakan ikon SVG berbentuk tiga garis horizontal. -->
-
-      <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4">
-        <a href="index.html" class="block py-1">BERANDA</a>
-        <a href="detail.html" class="block py-1">STRUKTUR ORGANISASI</a>
-      </div>
+<body>
+  <div class="bg-overlay">
+    <!-- Header -->
+    <header class="header">
+      <img src="img/logo_hima_sia.png" alt="Logo HIMA" />
+      <h1>HIMA SIA - UTDI</h1>
     </header>
-    <!-- Kode tersebut menampilkan menu navigasi untuk perangkat mobile yang awalnya disembunyikan (hidden) dan hanya muncul di layar kecil (md:hidden), 
-    berisi tautan ke halaman "Beranda" dan "Struktur Organisasi". -->
 
-    <!-- Section Struktur Organisasi -->
-    <section class="p-8">
-      <h2 class="text-3xl font-bold text-center mb-8">Struktur Organisasi</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+    <!-- Navigasi -->
+    <nav class="container" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+      <a href="index.html" class="back-button">BERANDA</a>
+      <a href="detail.html" class="back-button">STRUKTUR ORGANISASI</a>
+    </nav>
 
+    <!-- Struktur Organisasi -->
+    <section class="container">
+      <h2 style="text-align: center; margin-bottom: 24px;">Struktur Organisasi</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
         <!-- Ketua -->
-        <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-          <img src="img/ketua.jpeg" alt="Ketua HIMA" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-lg font-bold">Ketua</h3>
-          <p class="text-justify">Muhammad Maulana F. Saya siap bertanggung jawab dalam memimpin organisasi dan menyusun strategi kerja.</p>
+        <div class="card">
+          <img src="img/ketua.jpeg" alt="Ketua HIMA" />
+          <div class="card-content">
+            <h2>Ketua</h2>
+            <p>Muhammad Maulana F. Saya siap bertanggung jawab dalam memimpin organisasi dan menyusun strategi kerja.</p>
+          </div>
         </div>
 
         <!-- Wakil Ketua -->
-        <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-          <img src="img/wakil.jpeg" alt="Wakil Ketua" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-lg font-bold">Wakil Ketua</h3>
-          <p class="text-justify">Arfandi Ruhanda S. Saya siap mendampingi ketua dan mengkoordinasikan program kerja antar divisi.</p>
+        <div class="card">
+          <img src="img/wakil.jpeg" alt="Wakil Ketua" />
+          <div class="card-content">
+            <h2>Wakil Ketua</h2>
+            <p>Arfandi Ruhanda S. Saya siap mendampingi ketua dan mengkoordinasikan program kerja antar divisi.</p>
+          </div>
         </div>
 
-        <!-- Sekretaris -->
-        <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-          <img src="img/administrasi.jpeg" alt="Administrasi" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-lg font-bold">Divisi Administrasi</h3>
-          <p class="text-justify">Kami Dita Putri Utami, Faza Shafarania dan Erlinda Wati N. Sebagai Ahli strategi keuangan dan pengerak ekonomi kreatif organisasi.</p>
+        <!-- Divisi Administrasi -->
+        <div class="card">
+          <img src="img/administrasi.jpeg" alt="Administrasi" />
+          <div class="card-content">
+            <h2>Divisi Administrasi</h2>
+            <p>Kami Dita Putri Utami, Faza Shafarania dan Erlinda Wati N. Sebagai Ahli strategi keuangan dan penggerak ekonomi kreatif organisasi.</p>
+          </div>
         </div>
 
-        <!-- Bendahara -->
-        <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-          <img src="img/akademik.jpeg" alt="Akademik" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-lg font-bold">Divisi Akademik</h3>
-          <p class="text-justify">Kami Catur S, Sofiyah H, Pramudya Ahzani I.K, dan Joharman Lombu. Siap menghadirkan program unggulan yang mendukung pengembangan akademik dan softskill kamu.</p>
+        <!-- Divisi Akademik -->
+        <div class="card">
+          <img src="img/akademik.jpeg" alt="Akademik" />
+          <div class="card-content">
+            <h2>Divisi Akademik</h2>
+            <p>Kami Catur S, Sofiyah H, Pramudya Ahzani I.K, dan Joharman Lombu. Siap menghadirkan program unggulan yang mendukung pengembangan akademik dan softskill kamu.</p>
+          </div>
         </div>
 
-        <!-- Divisi Acara -->
-        <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-          <img src="img/networking.jpeg" alt="Networking" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-lg font-bold">Divisi Networking</h3>
-          <p class="text-justify">Kami Muchlis Apri A.N, Frisca Putri, dan Nendy Angger. Siap menghubungkan HIMA SIA dengan seluruh mahasiswa dan pihak eksternal dari organisasi untuk menambah hubungan dan relasi</p>
+        <!-- Divisi Networking -->
+        <div class="card">
+          <img src="img/networking.jpeg" alt="Networking" />
+          <div class="card-content">
+            <h2>Divisi Networking</h2>
+            <p>Kami Muchlis Apri A.N, Frisca Putri, dan Nendy Angger. Siap menghubungkan HIMA SIA dengan seluruh mahasiswa dan pihak eksternal dari organisasi untuk menambah hubungan dan relasi.</p>
+          </div>
         </div>
 
-        <!-- Divisi Media -->
-        <div class="bg-white bg-opacity-80 p-4 rounded-xl shadow-md text-black">
-          <img src="img/dpo.jpeg" alt="dpo" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-          <h3 class="text-lg font-bold">Dewan Pengawas Organisasi</h3>
-          <p class="text-justify">Kami Vera Rossyana, Amelia Andra dan Rista Erlina. Siap mengawasi berjalanya organisasi HIMA SIA pada periode 2024/2025.</p>
+        <!-- DPO -->
+        <div class="card">
+          <img src="img/dpo.jpeg" alt="DPO" />
+          <div class="card-content">
+            <h2>Dewan Pengawas Organisasi</h2>
+            <p>Kami Vera Rossyana, Amelia Andra dan Rista Erlina. Siap mengawasi berjalannya organisasi HIMA SIA pada periode 2024/2025.</p>
+          </div>
         </div>
-
       </div>
     </section>
   </div>
-  <!-- Kode tersebut menampilkan bagian "Struktur Organisasi" dalam bentuk grid responsif berisi informasi ketua, wakil ketua, dan berbagai divisi HIMA SIA, 
-   lengkap dengan foto, nama jabatan, dan deskripsi tugas masing-masing. -->
 
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white text-center p-4">
+  <footer>
     &copy; 2025 HIMA SIA - Universitas Teknologi Digital Indonesia
   </footer>
 
+  <!-- ✅ Script untuk mendaftarkan service worker -->
   <script>
-    // JavaScript untuk toggle menu di mobile
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('service-worker.js')
           .then(function (registration) {
-            console.log('ServiceWorker terdaftar: ', registration.scope);
-          }, function (error) {
-            console.log('Pendaftaran ServiceWorker gagal: ', error);
+            console.log('ServiceWorker berhasil didaftarkan: ', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('ServiceWorker gagal didaftarkan: ', error);
           });
       });
     }
