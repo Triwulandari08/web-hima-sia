@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIMA SIA - UTDI</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="manifest" href="manifest.json" />
 </head>
 
 <!-- Tag meta viewport digunakan agar layout dapat menyesuaikan ukuran layar perangkat(responsif)
@@ -102,6 +103,17 @@
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+
+       if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            console.log('ServiceWorker terdaftar: ', registration.scope);
+          }, function (error) {
+            console.log('Pendaftaran ServiceWorker gagal: ', error);
+          });
+      });
+    }
   </script>
   <!-- Kode tersebut membuat fungsi tombol hamburger agar saat diklik,
        elemen menu dengan ID mobile-menu akan muncul atau disembunyikan dengan menambahkan atau menghapus kelas hidden. -->
